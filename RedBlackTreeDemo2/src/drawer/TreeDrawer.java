@@ -43,7 +43,7 @@ public class TreeDrawer {
     }
 
     private JFrame constructFrame(int screenWidth, int screenHeight) {
-        JFrame frame1 = new JFrame("Red Black Tree Demo Nhóm 12");
+        JFrame frame1 = new JFrame("Red Black Tree Demo Nhóm 14");
         frame1.setSize(screenWidth, screenHeight);
         frame1.setLocation(0, 0);
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
