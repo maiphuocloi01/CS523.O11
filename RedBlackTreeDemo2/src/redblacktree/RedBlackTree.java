@@ -270,4 +270,35 @@ public class RedBlackTree {
         int width = getDepth();
         this.traceTreePreorder(2500, 50, root, g, 1, width * 2, nodeDiameter);
     }
+
+    private void traceTreeSearch(int x, int y, Node currentNode, Graphics g, int n, int level, int nodeDiameter, int value) {
+        if (currentNode == NIL) {
+            return;
+        }
+        g.setColor((currentNode.colorIsRed) ? Color.red : Color.black);
+        g.fillOval(x - nodeDiameter / 2 + 10, y - nodeDiameter / 2 - 5, nodeDiameter, nodeDiameter);
+
+        int gap = (1300 / (n * nodeDiameter)) * Math.max(3, level);
+
+        g.setColor(Color.black);
+        if (currentNode.left != NIL) g.drawLine(x + 10, y + 5, x - gap, y + 70);
+        if (currentNode.right != NIL) g.drawLine(x + 10, y + 5, x + gap + 30, y + 70);
+
+        if (currentNode.value == value) {
+            g.setColor(Color.yellow);
+            g.drawString(Integer.toString(currentNode.value), x, y);
+        } else {
+            g.setColor(Color.white);
+            g.drawString(Integer.toString(currentNode.value), x, y);
+        }
+
+        traceTreeSearch(x - gap, y + 70, currentNode.left, g, 2 * n, level - 1, nodeDiameter, value);
+        traceTreeSearch(x + gap + 30, y + 70, currentNode.right, g, 2 * n, level - 1, nodeDiameter, value);
+
+    }
+
+    public void drawTreeSearch(Graphics g, int nodeDiameter, int value) {
+        int width = getDepth();
+        this.traceTreeSearch(2500, 50, root, g, 1, width * 2, nodeDiameter, value);
+    }
 }

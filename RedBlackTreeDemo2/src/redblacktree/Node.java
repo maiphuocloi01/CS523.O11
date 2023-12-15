@@ -16,15 +16,4 @@ public class Node {
         colorIsRed = true;
         parent = left = right = NIL;
     }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-                "value=" + value +
-                ", colorIsRed=" + colorIsRed +
-                ", parent=" + parent +
-                ", left=" + left +
-                ", right=" + right +
-                '}';
-    }
 }

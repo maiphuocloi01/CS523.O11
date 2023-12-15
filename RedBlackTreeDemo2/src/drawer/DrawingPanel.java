@@ -5,6 +5,8 @@ import redblacktree.RedBlackTree;
 import javax.swing.*;
 import java.awt.*;
 
+import static drawer.Constant.SEARCH_VALUE;
+
 public class DrawingPanel extends JPanel {
     private final RedBlackTree redBlackTree;
     static private DrawingPanel panel;
@@ -22,10 +24,6 @@ public class DrawingPanel extends JPanel {
         return panel;
     }
 
-    public void setDiameter(int diameter) {
-        this.diameter = diameter;
-    }
-
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.white);
@@ -39,6 +37,10 @@ public class DrawingPanel extends JPanel {
 
     private void draw(Graphics g) {
         g.setFont(new Font("Courier", Font.BOLD, diameter / 4));
-        redBlackTree.drawTree(g, diameter);
+        if (SEARCH_VALUE == -1) {
+            redBlackTree.drawTree(g, diameter);
+        } else {
+            redBlackTree.drawTreeSearch(g, diameter, SEARCH_VALUE);
+        }
     }
 }

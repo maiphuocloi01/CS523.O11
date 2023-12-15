@@ -1,5 +1,6 @@
 package listeners;
 
+import drawer.Constant;
 import drawer.DrawingPanel;
 import redblacktree.Node;
 import redblacktree.RedBlackTree;
@@ -13,7 +14,7 @@ public class SearchAction implements ActionListener {
 
     private final RedBlackTree theTree;
 
-    private void changeDiameter(String newDiameter) {
+    private void searchNode(String newDiameter) {
         try {
 
             Node search = theTree.Search(Integer.parseInt(newDiameter));
@@ -21,12 +22,31 @@ public class SearchAction implements ActionListener {
             if (search.value == -1) {
                 JOptionPane.showMessageDialog(null, "Can not find this node");
             } else {
-                JOptionPane.showMessageDialog(null, newDiameter +" is already in the tree");
+                Constant.setSearchValue(search.value);
+                drawingPanel.repaint();
+                createAndShowMessage(newDiameter +" is already in the tree");
             }
-            //drawingPanel.setNodeDiameter(Integer.parseInt(newDiameter));
-            //drawingPanel.repaint();
+
         } catch (NumberFormatException exp) {
             JOptionPane.showMessageDialog(null, "Enter digits only");
+        }
+    }
+
+    private static void createAndShowMessage(String message) {
+        Object[] options = {"OK"};
+
+        int result = JOptionPane.showOptionDialog(
+                null,  // parentComponent, null for default
+                message,  // message
+                "Message",  // title
+                JOptionPane.DEFAULT_OPTION,  // optionType
+                JOptionPane.INFORMATION_MESSAGE,  // messageType
+                null,  // icon
+                options,  // options
+                options[0]);  // initialValue
+
+        if (result == 0) {
+            Constant.setSearchValue(-1);
         }
     }
 
@@ -38,6 +58,6 @@ public class SearchAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String newDiameter = JOptionPane.showInputDialog("Enter the diameter");
         if (newDiameter == null) return;
-        changeDiameter(newDiameter);
+        searchNode(newDiameter);
     }
 }
