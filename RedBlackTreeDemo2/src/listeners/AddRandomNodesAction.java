@@ -1,6 +1,7 @@
 package listeners;
 
 import drawer.DrawingPanel;
+import redblacktree.Node;
 import redblacktree.RedBlackTree;
 
 import javax.swing.*;
@@ -33,13 +34,16 @@ public class AddRandomNodesAction implements ActionListener {
     private void generateRandomNodes(int numberOfNodes) {
         List<Integer> generateRandomList = generateRandomList(numberOfNodes);
         for (Integer integer : generateRandomList) {
-            redBlackTree.insert(integer);
+            Node search = redBlackTree.Search(integer);
+            if (search.value == -1) {
+                redBlackTree.insert(integer);
+            }
         }
     }
 
     public static List<Integer> generateRandomList(int quantity) {
         List<Integer> numbers = new ArrayList<>();
-        for (int i = 1; i <= quantity; i++) {
+        for (int i = 1; i <= 1000; i++) {
             numbers.add(i);
         }
         Collections.shuffle(numbers);
