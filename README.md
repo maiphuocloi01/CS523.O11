@@ -10,9 +10,13 @@
 - Mã lớp: CS523.O11
 - Nhóm 14
 - GVHD: ThS. Nguyễn Thanh Sơn
-- Chủ đề thuyết trình và demo: Red-Black Tree (Cây Đỏ - Đen)
+- Chủ đề thuyết trình và demo: **Red-Black Tree (Cây Đỏ - Đen)**
 ## Nhóm 14
 |ID | Họ tên | Email |
 |------:|------------|----------|
 |19521769|Mai Phước Lợi|19521769@gm.uit.edu.vn|
 |21520334|Nguyễn Thái Thành Long|21520334@gm.uit.edu.vn|
+
+## Thông tin
+- Document: Gồm Slide lý thuyết, Bài tập về nhà (Đề bài + Lời giải) và Quiz (Câu hỏi + Kết quả tham gia Quiz)
+- Demo: Thực hiện minh họa thao tác Tìm kiếm, Thêm phần tử, Xóa phần tử trên CTDL Cây đỏ-đen. Được viết bằng ngôn ngữ Java
