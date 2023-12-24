@@ -12,7 +12,7 @@
 - GVHD: ThS. Nguyễn Thanh Sơn
 - Chủ đề thuyết trình và demo: **Red-Black Tree (Cây Đỏ - Đen)**
 ## Nhóm 14
-|ID | Họ tên | Email |
+| MSSV | Họ tên | Email |
 |------:|------------|----------|
 |19521769|Mai Phước Lợi|19521769@gm.uit.edu.vn|
 |21520334|Nguyễn Thái Thành Long|21520334@gm.uit.edu.vn|
