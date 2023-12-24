@@ -1,0 +1,7 @@
+- Nhóm 8:
++ Đại diện nộp: Trần Nhật Phong
++ Đánh giá: 
+	1. Bài 2, 3 có kết quả chính xác (10/10)
+	2. Bài 1: 
+	- Cơ bản trình bày được 1 số bước của phép xoay nhưng vẫn có điểm sai sót.
+	- Chưa bao quát hết các trường hợp cần khi xoay gồm khi xoay tại node gốc
